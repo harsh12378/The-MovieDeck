@@ -148,6 +148,7 @@ body {
   gap: 2rem;
   padding: 2rem;
   justify-items: center;
+  
 }
 
 /* Movie card */
@@ -223,8 +224,6 @@ body {
 }
 
 
-
-
 .buttonL ul {
   display: flex;
   list-style: none;
@@ -254,6 +253,9 @@ body {
   color: #1c1c1c;
 
 }
+
+
+
 
 .chat-button {
   position: fixed;

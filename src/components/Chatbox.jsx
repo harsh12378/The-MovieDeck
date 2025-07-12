@@ -7,15 +7,29 @@ export default function ChatBox({ onClose }) {
     { from: 'bot', text: 'Hi! How can I help you?' }
   ]);
 
-  const handleSend = (e) => {
+  const handleSend = async (e) => {
     e.preventDefault();
     if (!input.trim()) return;
 
-    
+    const userMessage=input;
     setMessages(prev => [...prev, { from: 'user', text: input }]);
     setInput('');
 
-    // TODO: Send input to Hugging Face API 
+    try{
+      const res =await fetch ('/.netlify/functions/chat',{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body :JSON.stringify({message:userMessage})
+      })
+      console.log(res);
+      const data=await res.json();
+      console.log(data.reply);
+      
+      setMessages(prev =>[...prev,{from:'bot',text:data.reply||"sorry, I didnt get that"}])
+    } catch(err){
+      console.error(err);
+      setMessages(prev =>[...prev,{from:'bot',text:"error"}])
+    }
   };
 
   return (
