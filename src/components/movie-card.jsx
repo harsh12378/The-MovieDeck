@@ -1,7 +1,17 @@
 
 import React from 'react';
-
+import { getTrailerUrl } from "../utils/getTrailerUrl.js";
 export default function({ movie, genreMap }){
+
+
+  const handleWatchTrailer = async () => {
+    const url = await getTrailerUrl(movie.id, import.meta.env.VITE_TMDB_API_KEY);
+    if (url) {
+      window.open(url, "_blank");
+    } else {
+      alert("Trailer not available");
+    }
+  };
 
 
     return (
@@ -18,8 +28,8 @@ export default function({ movie, genreMap }){
           <p>Release Date: {movie.release_date}</p>
           <p>Rating: {movie.vote_average}/10</p>
           <p className="overview">Overview: {movie.overview?.slice(0,100)}...</p>
-          <button>Watch Trailer</button>
-          <button>Add to Watchlist</button>
+          <button onClick={handleWatchTrailer}>Watch Trailer</button>
+          <button >Add to Watchlist</button>
         </article>
       );
     
