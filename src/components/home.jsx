@@ -17,7 +17,7 @@ export default function Body() {
             const res= await fetch(`https://api.themoviedb.org/3/trending/movie/day?api_key=${apiKey}&region=IN&page=${page}`);
             const data = await res.json();
             setMovies(prev=>[...prev,...data.results]);
-            console.log(data.results);
+           
             setLoading(false);
         };
 

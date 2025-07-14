@@ -21,13 +21,13 @@ export default function ChatBox({ onClose }) {
         headers:{'Content-Type':'application/json'},
         body :JSON.stringify({message:userMessage})
       })
-      console.log(res);
+     
       const data=await res.json();
-      console.log(data.reply);
+      
       
       setMessages(prev =>[...prev,{from:'bot',text:data.reply||"sorry, I didnt get that"}])
     } catch(err){
-      console.error(err);
+   
       setMessages(prev =>[...prev,{from:'bot',text:"error"}])
     }
   };

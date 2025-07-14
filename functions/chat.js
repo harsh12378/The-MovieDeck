@@ -6,10 +6,9 @@ const SYSTEM_PROMPT = `suggest some latest movies based on this,dont give any th
 
 
 export async function handler(event) {
-console.log("✅ Loaded HF_TOKEN:", !!process.env.HF_TOKEN); // Should print: true
 
   if (!event.body) {
-    console.log("empety body")
+    
     return {
       statusCode: 400,
       body: JSON.stringify({ error: "Missing request body" }),

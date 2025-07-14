@@ -16,7 +16,7 @@ export default function Body() {
             const res= await fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&with_original_language=hi&sort_by=popularity.desc&page=${page}`);
             const data = await res.json();
             setMovies(prev=>[...prev,...data.results]);
-            console.log(data.results);
+         
             setLoading(false);
         };
 

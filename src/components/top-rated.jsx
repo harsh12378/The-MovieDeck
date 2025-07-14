@@ -16,7 +16,7 @@ export default function Body() {
             const res= await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&page=${page}`);
             const data = await res.json();
             setMovies(prev=>[...prev,...data.results]);
-            console.log(data.results);
+          
             setLoading(false);
         };
 
