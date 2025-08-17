@@ -10,6 +10,9 @@ export default function Header() {
   // Add these 3 simple functions to your existing header component
 const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
+const handleHeaderClick =()=>{
+  window.location.href="/";
+}
 const toggleSidebar = () => {
   setIsSidebarOpen(!isSidebarOpen);
 };
@@ -81,8 +84,10 @@ return (
       </button>
 
       {/* Logo and Title - Always visible */}
-      <h1 className="header-title">
-        <img src={logo1} alt="Logo" className="header-logo" /> 
+      <h1 className="header-title"  onClick={handleHeaderClick}>
+        <img src={logo1} alt="Logo" className="header-logo" 
+        onClick={handleHeaderClick}
+        /> 
         The MovieDeck
       </h1>
       
