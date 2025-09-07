@@ -27,7 +27,6 @@ const closeSidebar = () => {
    const updateLoginStatus = () => {
     setIsLoggedIn(!!localStorage.getItem("token"));
   };
-          console.log("isLoggedIn", isLoggedIn);
   window.addEventListener("storage", updateLoginStatus);
   window.addEventListener("loginStatusChanged", updateLoginStatus); 
   return () => {
@@ -46,7 +45,6 @@ const [query, setQuery] = useState('');
 
     navigate(`/search?q=${encodeURIComponent(query)}`);
     setQuery('');
-    console.log(isLoggedIn);
 
   }
   const handleWatchListButton=(e)=>{
@@ -239,23 +237,7 @@ return (
           </ul>
         </nav>
         
-        {/* Mobile Search */}
-        <div className="mobile-search">
-          <h3 className="mobile-section-title">Search</h3>
-          <form className="mobile-search-form" onSubmit={handleSubmit}>
-            <input
-              className="mobile-search-input"
-              type="text"
-              placeholder="Search for a movie..."
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              aria-label="Search for movies"
-            />
-            <button className="mobile-search-button" type="submit" aria-label="Search">
-              Search
-            </button>
-          </form>
-        </div>
+      
         
         {/* Mobile Auth */}
         <div className="mobile-auth">

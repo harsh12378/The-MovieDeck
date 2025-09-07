@@ -16,7 +16,11 @@ export default function Body() {
             const apiKey = import.meta.env.VITE_TMDB_API_KEY;
             const res= await fetch(`https://api.themoviedb.org/3/trending/movie/day?api_key=${apiKey}&region=IN&page=${page}`);
             const data = await res.json();
-            setMovies(prev=>[...prev,...data.results]);
+            setMovies((prevMovies) => {
+            const allMovies = [...prevMovies, ...data.results];
+            const uniqueMovies = Array.from(new Map(allMovies.map(m => [m.id, m])).values());
+            return uniqueMovies;
+            });
            
             setLoading(false);
         };
@@ -25,7 +29,6 @@ export default function Body() {
     }, [page]);
 
    Scroll(() => setPage(prev => prev + 1), loading);
-
     
   return (
     <div className="home-body">

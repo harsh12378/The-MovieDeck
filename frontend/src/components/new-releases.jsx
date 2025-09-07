@@ -15,7 +15,11 @@ export default function Body() {
             const apiKey = import.meta.env.VITE_TMDB_API_KEY;
             const res= await fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&with_original_language=hi&sort_by=popularity.desc&page=${page}`);
             const data = await res.json();
-            setMovies(prev=>[...prev,...data.results]);
+            setMovies((prevMovies) => {
+            const allMovies = [...prevMovies, ...data.results];
+            const uniqueMovies = Array.from(new Map(allMovies.map(m => [m.id, m])).values());
+            return uniqueMovies;
+            });
          
             setLoading(false);
         };

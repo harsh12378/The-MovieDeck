@@ -1,3 +1,165 @@
+/* Auth form styles */
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(28,28,28,0.98);
+}
+
+.auth-box {
+  background: #23272f;
+  padding: 2.5rem 2rem 2rem 2rem;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  width: 100%;
+  max-width: 370px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #f1f1f1;
+  letter-spacing: 1px;
+}
+
+.auth-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.auth-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.auth-label {
+  font-size: 1rem;
+  color: #bdbdbd;
+  margin-bottom: 0.1rem;
+}
+
+.auth-input {
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #181a20;
+  color: #f1f1f1;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+}
+.auth-input:focus {
+  border: 1.5px solid #5c9eff;
+}
+
+.auth-button,
+.login-button,
+.signup-button,
+.watchlist-button {
+  background-color: #ff9800 !important;
+  color: #1c1c1c !important;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+  text-align: center;
+  white-space: nowrap;
+}
+.auth-button:hover,
+.login-button:hover,
+.signup-button:hover,
+.watchlist-button:hover {
+  background-color: #ff8700 !important;
+  color: #1c1c1c !important;
+  transform: translateY(-2px);
+}
+
+
+.auth-link-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.1rem;
+  font-size: 1rem;
+}
+.auth-link-btn {
+  background: none;
+  border: none;
+  color: #5c9eff;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 1rem;
+  padding: 0;
+}
+.auth-link-btn:hover {
+  color: #3a7bd5;
+}
+
+.divider-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 1.2rem 0 1.1rem 0;
+}
+.divider {
+  flex: 1;
+  height: 1.5px;
+  background: linear-gradient(90deg, #23272f 0%, #5c9eff 100%);
+  opacity: 0.5;
+  border-radius: 1px;
+}
+.or-text {
+  margin: 0 0.8rem;
+  color: #bdbdbd;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.google-btn-row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.google-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  background: #fff;
+  color: #23272f;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(60,120,255,0.08);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.google-btn:hover {
+  background: #e6e6e6;
+  color: #3a7bd5;
+}
+.google-icon {
+  width: 1.3em;
+  height: 1.3em;
+  margin-right: 0.2em;
+}
 * {
   margin: 0;
   padding: 0;
@@ -23,9 +185,11 @@ body {
 .home-body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  padding-top: 2rem;
   justify-items: center;
+
   
 }
 
@@ -51,6 +215,7 @@ body {
   height: auto;
   border-radius: 8px;
   margin-bottom: 1rem;
+  
 }
 
 /* Title styling */
@@ -289,7 +454,7 @@ body {
   margin-bottom: 24px;
   font-size: 26px;
   font-weight: 600;
-  color: #ffeb3b;
+  color: #f39913;
 }
 
 .auth-group {
@@ -320,21 +485,32 @@ body {
   background-color: #333;
 }
 
-.auth-button {
-  width: 100%;
-  padding: 12px;
-  border: none;
-  border-radius: 6px;
-  background-color: #ffeb3b;
-  color: #1a1a1a;
-  font-size: 16px;
-  font-weight: bold;
+.auth-button,
+.login-button,
+.signup-button,
+.watchlist-button {
+  background-color: #ff9800 !important;
+  color: #1c1c1c !important;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+  text-align: center;
+  white-space: nowrap;
 }
-
-.auth-button:hover {
-  background-color: #fdd835;
+.auth-button:hover,
+.login-button:hover,
+.signup-button:hover,
+.watchlist-button:hover {
+  background-color: #ff8700 !important;
+  color: #1c1c1c !important;
+  transform: translateY(-2px);
 }
 
 
@@ -367,11 +543,17 @@ body {
   font-size: 1.8rem;
   color: #ffc107;
 }
+.header-title:hover{
+  cursor: pointer; 
+}
 
 .header-logo {
   width: 70px;
   height: 70px;
   vertical-align: middle;
+}
+.header-logo:hover{
+cursor: pointer; 
 }
 
 /* Hamburger Menu - Hidden on desktop */
@@ -456,14 +638,18 @@ body {
   flex-direction: row;
   align-items: center;
   list-style: none;
-  gap: 1rem;
+  gap: 0.7rem;
   margin: 0;
   padding: 0;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  height: 100%;
 }
 
 .auth-item {
   margin: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 /* Auth Buttons */
@@ -480,35 +666,37 @@ body {
   border: none;
   text-align: center;
   white-space: nowrap;
+  background-color: #ff9800;
 }
 
 .login-button {
-  background-color: #e0e0e0;
+  background-color: #ff9800;
   color: #1c1c1c;
 }
 
 .login-button:hover {
-  background-color: #d0d0d0;
+  background-color: #ff8700;
   transform: translateY(-2px);
 }
 
 .signup-button {
-  background-color: #ffc107;
+ background-color: #ff9800;
   color: #1c1c1c;
 }
 
 .signup-button:hover {
-  background-color: #ffb300;
+  background-color: #ff9800;
   transform: translateY(-2px);
 }
 
 .logout-button {
-  background-color: #ff4444;
-  color: #fff;
+  background-color: #ff3131 !important;
+  color: #1c1c1c !important;
 }
 
 .logout-button:hover {
-  background-color: #ff3333;
+  background-color: #e01111 !important;
+  color: #1c1c1c !important;
   transform: translateY(-2px);
 }
 
