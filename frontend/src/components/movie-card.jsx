@@ -31,7 +31,7 @@ const { watchList, setWatchList } = useContext(WatchlistContext); // ✅ correct
   return;
   };
   try{
-    const response= await fetch('http://localhost:5000/api/watchlist/add',{
+    const response= await fetch(`${API_BASE_URL}/api/watchlist/add`,{
       method:'POST',
       headers:{
         'Content-Type' : 'application/json',
@@ -70,7 +70,7 @@ const handleRemoveFromWatchlist = async (movieId) => {
   console.log("Removing movie ID:", movieId);
   
   try {
-    const response = await fetch('http://localhost:5000/api/watchlist/remove', {
+    const response = await fetch(`${API_BASE_URL}/api/watchlist/remove`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

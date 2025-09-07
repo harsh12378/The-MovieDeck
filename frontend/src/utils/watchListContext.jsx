@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from "react";
-
+import API_BASE_URL from "../config";
 export const WatchlistContext = createContext();
 
 export const WatchlistProvider = ({ children }) => {
@@ -12,7 +12,7 @@ export const WatchlistProvider = ({ children }) => {
       if (!token) return;
 
       try {
-        const res = await fetch("http://localhost:5000/api/watchlist/get", {
+        const res = await fetch(`${API_BASE_URL}/api/watchlist/get`, {
           method: "GET",
           headers: {
             Authorization: `Bearer ${token}`,

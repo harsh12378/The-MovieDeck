@@ -25,8 +25,19 @@ async function connectDB() {
   }
 }
 connectDB();
+const allowedOrigins=[
+  "https://moviedeck-app.netlify.app",
+  "http://localhost:5173",
+]
 app.use(cors({
-  origin: "http://localhost:5173", 
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      console.log("cors error");
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
   credentials: true,
 }));
 const port=5000;
