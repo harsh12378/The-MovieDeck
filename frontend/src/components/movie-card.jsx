@@ -4,7 +4,7 @@ import { getTrailerUrl } from "../utils/getTrailerUrl.js";
 import {useState, useEffect} from 'react';
 import { useContext } from "react";
 import { WatchlistContext } from "../utils/watchListContext.jsx";
-
+import API_BASE_URL from '../config.js';
 export default function({ movie, genreMap }){
 
   

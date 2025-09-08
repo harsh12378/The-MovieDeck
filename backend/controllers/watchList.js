@@ -75,7 +75,7 @@ exports.removeFromWatchList = async (req, res) => {
   
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    const id = decoded.id;
+    const id = decoded.userId;
     const user = await User.findOne({ _id: id });
     
     if (!user) {
