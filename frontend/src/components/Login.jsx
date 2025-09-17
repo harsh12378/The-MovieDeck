@@ -3,6 +3,7 @@ import  { useState } from 'react';
 import API_BASE_URL from '../config'
 import { useGoogleLogin } from "@react-oauth/google";
 import { useNavigate } from 'react-router-dom';
+
 export default function Login() {
 const navigate=useNavigate();
 
@@ -32,7 +33,7 @@ const navigate=useNavigate();
       localStorage.setItem('token', data.token);
       
        window.dispatchEvent(new Event("loginStatusChanged")); 
-      window.location.href = '/';
+       navigate("/");
     }
 
   } catch (error) {

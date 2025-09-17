@@ -6,12 +6,12 @@ import { useNavigate } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import { useEffect } from 'react';
 export default function Header() {
-
+const navigate = useNavigate();
   // Add these 3 simple functions to your existing header component
 const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
 const handleHeaderClick =()=>{
-  window.location.href="/";
+  navigate('/')
 }
 const toggleSidebar = () => {
   setIsSidebarOpen(!isSidebarOpen);
@@ -36,7 +36,7 @@ const closeSidebar = () => {
   }, [isLoggedIn]);
 
 const [query, setQuery] = useState('');
-  const navigate = useNavigate();
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -50,12 +50,13 @@ const [query, setQuery] = useState('');
   const handleWatchListButton=(e)=>{
        
     const token = localStorage.getItem('token');
+    
     if(!token){
-      window.location.href='/login';
+      navigate('/login')
 
     }
     else{
-      window.location.href='/watchlist';
+     navigate('/watchlist')
     }
 
   }
@@ -64,7 +65,7 @@ const [query, setQuery] = useState('');
   localStorage.removeItem('token');
   setIsLoggedIn(false);
   window.dispatchEvent(new Event("loginStatusChanged"));
-  window.location.href='/';
+  navigate('/')
 };
 
 return (
