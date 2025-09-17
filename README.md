@@ -1,12 +1,49 @@
-# React + Vite
+# 🎬 Movie Explorer App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack **MERN Movie Explorer App** where you can discover, explore, and save your favorite movies from different domains. The app provides an interactive interface for browsing trending, top-rated, and upcoming movies, along with a personalized **watchlist** feature and secure **Google Authentication**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
+- 🔍 **Browse Movies** – Explore movies across genres, categories, and trending domains.  
+- 🎞 **Movie Details** – View detailed information like synopsis, rating, release date, and posters.  
+- ⭐ **Watchlist** – Add or remove movies to your personal watchlist for later viewing.  
+- 🔑 **Google Authentication** – Login securely with your Google account.  
+- 📱 **Responsive UI** – Works seamlessly on desktop and mobile devices.  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠 Tech Stack
+- **Frontend**: React, TailwindCSS (for styling)  
+- **Backend**: Node.js, Express.js  
+- **Database**: MongoDB (Mongoose ODM)  
+- **Authentication**: Google OAuth (using Firebase / Passport.js)  
+- **API**: TMDB (The Movie Database API) for fetching movie data  
+
+---
+
+## ⚡ Installation & Setup
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/movie-explorer.git
+   cd movie-explorer
+ ## install dependencies
+2. cd frontend && npm install
+cd ../backend && npm install
+  ## set up envoirnment variables
+
+3. MONGO_URI=your_mongodb_connection_string
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+TMDB_API_KEY=your_tmdb_api_key
+JWT_SECRET=your_jwt_secret
+ ## run commands
+
+ 4. # Backend
+cd backend
+npm run dev
+
+# Frontend
+cd frontend
+npm start
